@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+    <title>simpleXSL Online</title>
+
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/redmond/jquery-ui.min.css">
+    
+    <!-- We need the bleeding edge ace, for autocompletion, so no cdn -->
+    <script type="text/javascript" src="libs/ace/ace.js"></script>
+    <script type="text/javascript" src="libs/ace/theme-github.js"></script>
+    <script type="text/javascript" src="libs/ace/mode-xml.js"></script>
+    <script type="text/javascript" src="libs/ace/ext-language_tools.js"></script>
+
+    <!-- My (simple) xsl autocompletion plugin -->
+    <script type="text/javascript" src="js/xslCompleter.js"></script>
+    <!-- main app -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <!-- MIT license, https://github.com/polomoshnov/jQuery-UI-Resizable-Snap-extension -->
+    <script type="text/javascript" src="libs/jquery.ui.resizable.snap.ext.v1.9.min.js"></script>
+    <!-- vkbeautify by Vadim Kiryukhin, https://code.google.com/p/vkbeautify/ -->
+    <script type="text/javascript" src="libs/vkbeautify.0.99.00.beta.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="welcome">
+        <h1>Welcome</h1>
+        <p>This is a hopefully simple xslt editor. It has been tested in chromium and firefox.</p> 
+        <p>If you move the mouse over the gray strip at the top of a window you'll get some more buttons, for uploading, saving etc.., and you may move the windows.</p>
+        <p>Any changes to content are automatically saved, window positions are not yet saved.</p>
+        </p>It uses your browsers internal xslt processor so result might vary a bit between browsers.</p>
+        <p>The editor component is a ACE editor, shortcuts can be found  
+            <a href="https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts">here</a>
+        </p>
+        <p>Useful shortcuts are among others, <i>Ctrl+Space</i>, autocompletion. and <i>Ctrl+H</i>, regex search.</p>
+        <p>
+        There is room for many improvements, and it was just to be a quick tool for another project.
+        So please join me at <a href="#">github</a>, the source code license is simplified bsd.
+        </p>
+        <p>Any comments, or just a thank you will be much appreciated.</p>
+        <p>Lars Banner-Voigt, <br />
+        <a href="mailto:lars@banner-voigt.net">lars@banner-voigt.net</a>
+         <input type="button" onclick="$('#welcome').remove()" value="Continue" id="welcome_close" autofocus/>
+        </p>
+        <div id="overview">
+            <div id="overview_editor">Editor</div>
+            <div id="overview_preview">Preview</div>
+            <div id="overview_testcase">Testcase</div>
+            <div id="overview_panel">Error's</div>
+        </div>
+    </div>
+    <div id="editor"></div>
+<!--     <div id="documentation"></div> -->
+    <div id="preview"></div>
+    <div id="testcase"></div>
+    <div id="panel"><div id="panel_handle"></div></div>
+  </body>
+</html>
